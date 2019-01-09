@@ -1,12 +1,8 @@
-variable "key_name" {}
-
 variable "region" {
   default = "us-west-2"
 }
 
-variable "public_key_contents" {
-  default = ""
-}
+variable "public_key_contents" {}
 
 provider "aws" {
   region = "${var.region}"

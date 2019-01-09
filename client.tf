@@ -12,7 +12,7 @@ module "client" {
 
   ami                         = "ami-e251209a"
   instance_type               = "r4.2xlarge"
-  key_name                    = "${aws_key_pair.neptune_client.name}"
+  key_name                    = "${aws_key_pair.neptune_client.key_name}"
   vpc_security_group_ids      = ["${aws_security_group.neptune_client.id}"]
   subnet_id                   = "${module.vpc.public_subnets[0]}"
   associate_public_ip_address = true
@@ -77,14 +77,14 @@ resource "aws_security_group" "neptune_client" {
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port   = 8182
     to_port     = 8182
-    protocol    = "-1"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
