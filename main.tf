@@ -1,3 +1,5 @@
+## DISCLAIMER: code for demonstration purposes only
+
 variable "region" {
   default = "us-west-2"
 }

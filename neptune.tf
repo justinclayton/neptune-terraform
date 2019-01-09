@@ -1,3 +1,4 @@
+## DISCLAIMER: code for demonstration purposes only
 resource "aws_neptune_cluster" "demo" {
   cluster_identifier                  = "demo"
   skip_final_snapshot                 = true
